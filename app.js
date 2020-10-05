@@ -73,29 +73,30 @@ const menu = [
   },
 ];
 
-const menuItems = document.querySelector(".section-center");
+const sectionCenter = document.querySelector(".section-center");
 
 window.addEventListener("DOMContentLoaded", function () {
-
+  displayMenuItems(menu);
 });
 
-function diplayMenuItems(menuItems) {
-    let displayMenu = menuItems.map(function (item) {
+function displayMenuItems(menuItems) {
+  let displayMenu = menuItems.map(function (item) {
     // console.log(item);
-  
+
     return `<article class="menu-item">
-    <img src="${item.img}" class="photo" alt=${item.title}>
-    <div class="item-info">
-      <header>
-        <h4>${item.title}</h4>
-        <h4 class="price">$${item.title}</h4>
-      </header>
-      <p class="item-text">
-        ${item.desc}
-      </p>
-    </div>
-  </article>`;
+          <img src=${item.img} class="photo" alt=${item.title} />
+          <div class="item-info">
+            <header>
+              <h4>${item.title}</h4>
+              <h4 class="price">$${item.price}</h4>
+            </header>
+            <p class="item-text">
+              ${item.desc}
+            </p>
+          </div>
+        </article>`;
   });
+
   displayMenu = displayMenu.join("");
   menuItems.innerHTML = displayMenu;
 }
