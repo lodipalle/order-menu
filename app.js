@@ -78,10 +78,33 @@ const filterBtns = document.querySelectorAll(".filter-btn");
 
 window.addEventListener("DOMContentLoaded", function () {
   displayMenuItems(menu);
+  const categories = menu.reduce(
+    function (values, item) {
+      if (!values.includes(item.category)) {
+        values.push(item.category);
+      }
+      return values;
+    },
+    ['all']
+  );
+  console.log(categories);
 });
+
 filterBtns.forEach(function (btn) {
   btn.addEventListener("click", function (e) {
-    console.log(e.currentTarget.dataset.id);
+    const category = e.currentTarget.dataset.id;
+    const menuCategory = menu.filter(function (menuItem){
+      // console.log(menuItem.category);
+      if (menuItem.category === category) {
+        return menuItem;
+      }
+    });
+    // console.log(menuCategory);
+    if (category === "all") {
+      displayMenuItems(menu);
+    } else {
+      displayMenuItems(menuCategory);
+    }
   });
 });
 
@@ -102,7 +125,7 @@ function displayMenuItems(menuItems) {
           </div>
         </article>`;
   });
-
   displayMenu = displayMenu.join("");
-  menuItems.innerHTML = displayMenu;
+  
+  sectionCenter.innerHTML = displayMenu;
 }
