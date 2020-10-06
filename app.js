@@ -71,6 +71,22 @@ const menu = [
     img: "./images/item-9.jpeg",
     desc: `skateboard fam synth authentic semiotics. Live-edge lyft af, edison bulb yuccie crucifix microdosing.`,
   },
+  {
+    id: 10,
+    title: "Eye Fillet Steak",
+    category: "dinner",
+    price: 31.99,
+    img: "./images/item-10.jpeg",
+    desc: `The eye fillet is cut from the tenderloin and is the most tender cut of beef. We cook the best steak here in the county.`,
+  },
+  {
+    id: 11,
+    title: "Seafood Set",
+    category: "dinner",
+    price: 35.99,
+    img: "./images/item-11.jpg",
+    desc: `Mouthwatering calamari, fried prawns, and crab meat for the best dinner knockout combination in the county.`,
+  },
 ];
 
 const sectionCenter = document.querySelector(".section-center");
